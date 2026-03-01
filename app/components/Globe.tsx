@@ -77,7 +77,7 @@ function CoastlineGlobe({ positions }: { positions: Float32Array | null }) {
             />
           </bufferGeometry>
           <pointsMaterial
-            color={0x7AB8E6}  // primary blue
+            color={0x7AB8E6}  
             size={0.006}
             sizeAttenuation
             transparent
@@ -91,13 +91,13 @@ function CoastlineGlobe({ positions }: { positions: Float32Array | null }) {
         </mesh>
       )}
 
-      {/* Globe base */}
+      
       <mesh>
         <sphereGeometry args={[0.995, 48, 48]} />
         <meshBasicMaterial color={0x072040} />
       </mesh>
 
-      {/* Grid lines for blueprint feel */}
+   
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.005, 0.001, 4, 120]} />
         <meshBasicMaterial color={0x7AB8E6} transparent opacity={0.15} />

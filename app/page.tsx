@@ -11,7 +11,7 @@ export default function Index() {
 
   return (
     <>
-      {/* Always mounted */}
+      
       <LoadingScreen active={loading} />
 
       <div

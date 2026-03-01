@@ -27,7 +27,7 @@ export default function ResultsPage() {
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-background">
-      {/* Nav Dots */}
+      
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
         {Array.from({ length: TOTAL_SECTIONS }).map((_, i) => (
           <button
@@ -40,7 +40,7 @@ export default function ResultsPage() {
         ))}
       </div>
 
-      {/* Arrow Nav */}
+      
       {current > 0 && (
         <button
           onClick={() => goTo(current - 1)}
@@ -58,7 +58,7 @@ export default function ResultsPage() {
         </button>
       )}
 
-      {/* Back to Home Button */}
+      
       <Link
         href="/"
         className="fixed top-5 left-5 z-50 text-sm text-primary hover:text-primary/80 transition-colors"
@@ -66,7 +66,7 @@ export default function ResultsPage() {
         ← Back Home
       </Link>
 
-      {/* Sections */}
+      
       <div
         className="fixed inset-0 flex transition-transform duration-[900ms] ease-[cubic-bezier(0.77,0,0.175,1)]"
         style={{ transform: `translateX(-${current * 100}vw)` }}

@@ -55,7 +55,6 @@ export async function POST(req: NextRequest) {
 
   await pollUntilDone();
 
-  // Get agent IDs dynamically
   const agentsListRes = await safeFetch(`${BASE}/api/v1/agents`, {
     method: 'POST',
     headers,

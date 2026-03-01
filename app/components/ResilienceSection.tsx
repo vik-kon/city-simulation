@@ -120,7 +120,7 @@ export function ResilienceSection() {
     value,
   }));
 
-  // Initial profile — first value of each stat
+  
   const profile = statKeys.map(key => ({
     key,
     label: statLabels[key],
@@ -181,7 +181,7 @@ export function ResilienceSection() {
         </div>
       </motion.div>
 
-        {/* Agent trait profile */}
+        
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

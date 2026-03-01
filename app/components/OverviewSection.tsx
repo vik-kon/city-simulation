@@ -67,7 +67,7 @@
           </div>
         </motion.div>
 
-        {/* KPI Grid */}
+        
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -100,9 +100,9 @@
           ))}
         </motion.div>
 
-        {/* Lower Grid */}
+        
         <div className="grid grid-cols-2 gap-5 flex-1">
-          {/* Policy + Assumptions */}
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@
             </div>
           </motion.div>
 
-          {/* Winner / Loser */}
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

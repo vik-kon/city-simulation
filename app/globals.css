@@ -36,7 +36,7 @@ body {
   margin: 0;
 }
 
-/* Grain texture overlay */
+
 body::after {
   content: '';
   position: fixed;
@@ -47,7 +47,7 @@ body::after {
   z-index: 9999;
 }
 
-/* Custom scrollbar */
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(122, 184, 230, 0.3); border-radius: 2px; }

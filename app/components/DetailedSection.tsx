@@ -70,7 +70,6 @@ export function DetailedSection() {
   const animKey = `${popGroup}-${stat}`;
   const GROUPS = ['low_income', 'mid_income', 'high_income', 'elite'] as const;
 
-  // Build time series for selected group or averaged across all
   function getTimeSeries(group: PopGroup) {
     const groups = group === 'all' ? GROUPS : [group];
     const series = groups.map(g => populationData[g]?.[stat] ?? []);
@@ -81,7 +80,6 @@ export function DetailedSection() {
     }));
   }
 
-  // Bar chart data — last value minus first value per group
   const incomeCompareData = GROUPS.map(g => {
     const series = populationData[g]?.[stat] ?? [];
     const change = series.length ? series[series.length - 1] - series[0] : 0;
