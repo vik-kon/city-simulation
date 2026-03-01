@@ -32,7 +32,10 @@ export default function Index() {
               What should your<br />city try next?
             </h1>
 
-            <PromptBox onSimulate={() => setLoading(true)} />
+            <PromptBox
+              onSimulateAction={() => setLoading(true)}
+              onErrorAction={() => setLoading(false)}
+            />
           </div>
         </div>
       </div>

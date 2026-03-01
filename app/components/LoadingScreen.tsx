@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 
-// 1. Move the Node class OUTSIDE the component
+
 class Node {
   x: number; y: number
   vx: number; vy: number
@@ -58,7 +58,6 @@ export default function LoadingScreen({ active }: { active: boolean }) {
     window.addEventListener("resize", resize)
 
     const MAX_DIST = 130
-    // Create nodes using the current width/height
     const nodes = Array.from({ length: 120 }, () => new Node(canvas.width, canvas.height))
     let animId: number
 
@@ -99,7 +98,7 @@ export default function LoadingScreen({ active }: { active: boolean }) {
     }
   }, [])
 
-  // ... rest of your progress bar logic and JSX ...
+  // progress bar logic
   useEffect(() => {
     let current = 0
     const interval = setInterval(() => {

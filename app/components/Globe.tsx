@@ -4,11 +4,11 @@ import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-/** 1. Define types to replace 'any' */
-interface GeoJSONGeometry {
-  type: "Polygon" | "MultiPolygon" | "LineString" | "MultiLineString";
-  coordinates: any[]; // Coordinates structures vary deeply, but this satisfies the linter
-}
+type GeoJSONGeometry =
+  | { type: "Polygon";         coordinates: number[][][] }
+  | { type: "MultiPolygon";    coordinates: number[][][][] }
+  | { type: "LineString";      coordinates: number[][] }
+  | { type: "MultiLineString"; coordinates: number[][][] };
 
 interface GeoJSONData {
   geometries: GeoJSONGeometry[];
@@ -60,7 +60,7 @@ function CoastlineGlobe({ positions }: { positions: Float32Array | null }) {
   useFrame(({ clock }) => {
     if (!groupRef.current) return;
     const t = clock.getElapsedTime();
-    groupRef.current.rotation.y = t * 0.16;
+    groupRef.current.rotation.y = t * .15;
     groupRef.current.rotation.x = Math.sin(t * 0.055) * 0.1;
   });
 

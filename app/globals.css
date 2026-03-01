@@ -1,22 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #120e08;
+  --color-foreground: #ece8e0;
+  --color-card: #1d1612;
+  --color-card-foreground: #ece8e0;
+  --color-primary: #a06030;
+  --color-primary-foreground: #ece8e0;
+  --color-secondary: #2d2318;
+  --color-secondary-foreground: #ece8e0;
+  --color-muted: #70685e;
+  --color-muted-foreground: #c4bdb2;
+  --color-border: #2d2318;
+  --color-input: #2d2318;
+  --color-ring: #a06030;
+  --color-positive: #4a7c54;
+  --color-negative: #c05050;
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --radius: 0rem;
 }
 
 html,
@@ -26,8 +30,24 @@ body {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #120e08;
+  color: #ece8e0;
+  font-family: 'EB Garamond', Georgia, serif;
   margin: 0;
 }
+
+/* Grain texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(160, 96, 48, 0.3); border-radius: 2px; }
