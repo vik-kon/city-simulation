@@ -8,6 +8,9 @@ const headers = {
   "Content-Type": "application/json",
 };
 
+const GROUPS = ["low_income", "mid_income", "high_income", "elite"];
+const FIELDS = ["hunger", "housing", "injured", "education", "savings", "happiness"];
+
 async function pollUntilDone(): Promise<void> {
   while (true) {
     const res = await fetch(`${BASE}/api/v1/run`, { headers });
@@ -40,26 +43,32 @@ export async function POST(req: NextRequest) {
   await pollUntilDone();
 
   // Fetch all data in parallel
-  const [bulkRes, deadRes, migratedRes, winnerRes, loserRes] = await Promise.all([
-    fetch(`${BASE}/api/v1/data/bulk`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({
-        status: ["low_income", "mid_income", "high_income", "elite"],
-        fields: ["savings", "happiness"]
-      }),
-    }).then(r => r.json()),
+  const [deadRes, migratedRes, winnerRes, loserRes, ...groupResults] = await Promise.all([
     fetch(`${BASE}/api/v1/data/figures/dead`,     { headers }).then(r => r.json()),
     fetch(`${BASE}/api/v1/data/figures/migrated`, { headers }).then(r => r.json()),
     fetch(`${BASE}/api/v1/data/figures/winner`,   { headers }).then(r => r.json()),
     fetch(`${BASE}/api/v1/data/figures/loser`,    { headers }).then(r => r.json()),
+    ...GROUPS.map(group =>
+      fetch(`${BASE}/api/v1/data/bulk`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ status: [group], fields: FIELDS }),
+      }).then(r => r.json())
+    ),
   ]);
 
-  const savingsSeries:   number[] = bulkRes.data.savings;
-  const happinessSeries: number[] = bulkRes.data.happiness;
+  // Build populationData map
+  const populationData: Record<string, Record<string, number[]>> = {};
+  GROUPS.forEach((group, i) => {
+    populationData[group] = groupResults[i].data;
+  });
 
-  const netSavingsChange  = savingsSeries[savingsSeries.length - 1]   - savingsSeries[0];
-  const netHappinessChange = happinessSeries[happinessSeries.length - 1] - happinessSeries[0];
+  // Calculate net changes from low_income savings/happiness as aggregate proxy
+  const savingsSeries:   number[] = populationData['low_income'].savings   ?? [];
+  const happinessSeries: number[] = populationData['low_income'].happiness ?? [];
+
+  const netSavingsChange   = savingsSeries.length   ? savingsSeries[savingsSeries.length - 1]   - savingsSeries[0]   : 0;
+  const netHappinessChange = happinessSeries.length ? happinessSeries[happinessSeries.length - 1] - happinessSeries[0] : 0;
 
   const data = {
     prompt: prompt.trim(),
@@ -69,13 +78,15 @@ export async function POST(req: NextRequest) {
       deaths:    deadRes.data.dead,
       emigrants: migratedRes.data.migrated,
       winner:    winnerRes.data.winner,
-      loser:     loserRes.data.loser,
+      loser:     loserRes.data.winner,
     },
     agentTimeSeries: savingsSeries.map((value, i) => ({
-      step: i + 1,
+      step:      i + 1,
       savings:   value,
       happiness: happinessSeries[i],
     })),
+    populationData,
+    assumptions: [],
     timestamp: new Date().toISOString(),
   };
 

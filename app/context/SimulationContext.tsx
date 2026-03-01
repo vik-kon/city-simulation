@@ -17,6 +17,14 @@ export interface SimulationData {
     savings: number;
     happiness: number;
   }>;
+  populationData: Record<string, {
+    hunger:    number[];
+    housing:   number[];
+    injured:   number[];
+    education: number[];
+    savings:   number[];
+    happiness: number[];
+  }>;
   assumptions: string[];
   timestamp: Date;
 }
