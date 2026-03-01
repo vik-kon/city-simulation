@@ -14,32 +14,28 @@ export function OverviewSection() {
 
   const kpis = [
     {
-      label: 'Consumer Price Index',
+      label: 'Net Change in Savings',
       value: `+${aggregateMetrics.consumerPriceIndex}%`,
       type: 'neg' as const,
-      delta: 'above baseline',
-      sub: 'annual',
+      delta: 'per agent',
     },
     {
-      label: 'Household Real Income',
+      label: 'Net Change in Happiness',
       value: `−$${Math.abs(aggregateMetrics.householdRealIncome)}`,
       type: 'neg' as const,
-      delta: 'per household',
-      sub: 'year 1',
+      delta: 'per agent',
     },
     {
-      label: 'Employment Impact',
+      label: 'Number of Deaths',
       value: `${aggregateMetrics.employmentImpact}%`,
       type: 'neg' as const,
-      delta: 'retail & trade',
-      sub: '~18,200 jobs',
+      delta: 'scaled to city population',
     },
     {
-      label: 'Municipal Revenue',
+      label: 'Number of Emigrants',
       value: `+$${aggregateMetrics.municipalRevenue}M`,
       type: 'pos' as const,
-      delta: 'tax receipts',
-      sub: 'year 1',
+      delta: 'scaled to city population',
     },
   ];
 
@@ -107,7 +103,7 @@ export function OverviewSection() {
         >
           <div>
             <div className="text-[9px] tracking-[0.25em] text-primary uppercase mb-4 pb-3 border-b border-primary/20">
-              Policy Simulated
+              Prompt Simulated
             </div>
             <p className="text-[15px] leading-[1.7] text-muted-foreground italic">
               &ldquo;{prompt}&rdquo;

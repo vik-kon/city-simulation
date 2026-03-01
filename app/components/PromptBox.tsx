@@ -41,7 +41,7 @@ export default function PromptBox({
           value={value}
           onChange={(e) => { setValue(e.target.value); setError(null); }}
           onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSimulate(); } }}
-          placeholder="Describe any urban policy for any city — e.g. 'Ban single-use plastics in Chicago by 2026 and fund enforcement through a retail levy.'"
+          placeholder="Describe any urban policy for any city ex) 'Ban single-use plastics in Chicago by 2026 and fund enforcement through a retail levy.'"
           className="flex-1 bg-transparent border-none outline-none px-[1.15rem] py-4 font-sans text-[0.88rem] font-light text-foreground leading-relaxed resize-none h-20 overflow-hidden placeholder:text-muted-foreground/40"
         />
         <div className="w-px bg-border flex-shrink-0" />
