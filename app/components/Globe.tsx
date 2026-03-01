@@ -24,7 +24,6 @@ function latLngToVec3(lat: number, lng: number, radius: number): [number, number
   ];
 }
 
-/** Use the new interface here */
 function buildCoastlinePoints(data: GeoJSONData, radius: number): Float32Array {
   const points: number[] = [];
 
@@ -69,7 +68,6 @@ function CoastlineGlobe({ positions }: { positions: Float32Array | null }) {
       {positions ? (
         <points>
           <bufferGeometry>
-            {/** 2. Added 'args' prop to fix the TypeScript error */}
             <bufferAttribute
               attach="attributes-position"
               args={[positions, 3]}
@@ -79,28 +77,42 @@ function CoastlineGlobe({ positions }: { positions: Float32Array | null }) {
             />
           </bufferGeometry>
           <pointsMaterial
-            color={0xc07840}
+            color={0x7AB8E6}  // primary blue
             size={0.006}
             sizeAttenuation
             transparent
-            opacity={0.8}
+            opacity={0.9}
           />
         </points>
       ) : (
         <mesh>
           <icosahedronGeometry args={[1, 3]} />
-          <meshBasicMaterial color={0x7a5828} wireframe transparent opacity={0.6} />
+          <meshBasicMaterial color={0x1F3D5C} wireframe transparent opacity={0.6} />
         </mesh>
       )}
 
+      {/* Globe base */}
       <mesh>
         <sphereGeometry args={[0.995, 48, 48]} />
-        <meshBasicMaterial color={0x120e08} />
+        <meshBasicMaterial color={0x072040} />
       </mesh>
 
+      {/* Grid lines for blueprint feel */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.005, 0.001, 4, 120]} />
-        <meshBasicMaterial color={0xc07840} transparent opacity={0.2} />
+        <meshBasicMaterial color={0x7AB8E6} transparent opacity={0.15} />
+      </mesh>
+      <mesh rotation={[0, 0, 0]}>
+        <torusGeometry args={[1.005, 0.001, 4, 120]} />
+        <meshBasicMaterial color={0x7AB8E6} transparent opacity={0.15} />
+      </mesh>
+      <mesh rotation={[0, Math.PI / 4, 0]}>
+        <torusGeometry args={[1.005, 0.001, 4, 120]} />
+        <meshBasicMaterial color={0x7AB8E6} transparent opacity={0.08} />
+      </mesh>
+      <mesh rotation={[0, -Math.PI / 4, 0]}>
+        <torusGeometry args={[1.005, 0.001, 4, 120]} />
+        <meshBasicMaterial color={0x7AB8E6} transparent opacity={0.08} />
       </mesh>
     </group>
   );
