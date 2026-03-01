@@ -1,0 +1,827 @@
+[
+  {
+    "agent_id": "NYC-ELITE-001",
+    "daily_income": 500,
+    "initial_state": {
+      "savings": 50000,
+      "hunger": 0.1,
+      "housing": 0.95,
+      "injured": 0.0,
+      "utility_access": 1,
+      "education": 1,
+      "happiness": 0.85
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.1,
+        "hunger": 0.05,
+        "housing": 0.2,
+        "injured": 0.15,
+        "utility_access": 0.1,
+        "education": 0.1,
+        "happiness": 0.3
+      },
+      "migration_unsat_threshold": 0.4,
+      "budget_weights": {
+        "food": 0.1,
+        "housing": 0.3,
+        "healthcare": 0.1,
+        "utilities": 0.1,
+        "education": 0.1,
+        "happiness": 0.3
+      },
+      "dollar_impacts": {
+        "food": 0.006352941176470589,
+        "housing": 6.352941176470589e-05,
+        "healthcare": 0.0005,
+        "utilities": 4.235294117647059e-06,
+        "education": 6.352941176470589e-06,
+        "happiness": 0.006352941176470589
+      },
+      "withdraw_satisfaction_threshold": 0.2
+    },
+    "baseline_decay": {
+      "hunger": 0.01,
+      "housing": 0.001,
+      "injured": 0.005,
+      "happiness": 0.002
+    },
+    "meta": {
+      "group": "elite"
+    },
+    "linked_agents": [
+      "NYC-ELITE-002",
+      "NYC-HI-001"
+    ]
+  },
+  {
+    "agent_id": "NYC-ELITE-002",
+    "daily_income": 480,
+    "initial_state": {
+      "savings": 45000,
+      "hunger": 0.12,
+      "housing": 0.93,
+      "injured": 0.0,
+      "utility_access": 1,
+      "education": 1,
+      "happiness": 0.82
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.15,
+        "hunger": 0.04,
+        "housing": 0.25,
+        "injured": 0.1,
+        "utility_access": 0.1,
+        "education": 0.08,
+        "happiness": 0.28
+      },
+      "migration_unsat_threshold": 0.45,
+      "budget_weights": {
+        "food": 0.08,
+        "housing": 0.35,
+        "healthcare": 0.08,
+        "utilities": 0.1,
+        "education": 0.07,
+        "happiness": 0.32
+      },
+      "dollar_impacts": {
+        "food": 0.008132853835978837,
+        "housing": 8.132853835978837e-05,
+        "healthcare": 0.0005,
+        "utilities": 5.59133701223545e-06,
+        "education": 7.116247106481482e-06,
+        "happiness": 0.008132853835978837
+      },
+      "withdraw_satisfaction_threshold": 0.22
+    },
+    "baseline_decay": {
+      "hunger": 0.01,
+      "housing": 0.001,
+      "injured": 0.005,
+      "happiness": 0.002
+    },
+    "meta": {
+      "group": "elite"
+    },
+    "linked_agents": [
+      "NYC-ELITE-001",
+      "NYC-MID-005"
+    ]
+  },
+  {
+    "agent_id": "NYC-HI-001",
+    "daily_income": 250,
+    "initial_state": {
+      "savings": 15000,
+      "hunger": 0.2,
+      "housing": 0.8,
+      "injured": 0.05,
+      "utility_access": 1,
+      "education": 1,
+      "happiness": 0.65
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.1,
+        "hunger": 0.15,
+        "housing": 0.25,
+        "injured": 0.2,
+        "utility_access": 0.1,
+        "education": 0.1,
+        "happiness": 0.1
+      },
+      "migration_unsat_threshold": 0.5,
+      "budget_weights": {
+        "food": 0.25,
+        "housing": 0.3,
+        "healthcare": 0.15,
+        "utilities": 0.1,
+        "education": 0.1,
+        "happiness": 0.1
+      },
+      "dollar_impacts": {
+        "food": 0.00865359477124183,
+        "housing": 8.653594771241829e-05,
+        "healthcare": 0.0005,
+        "utilities": 6.230588235294118e-06,
+        "education": 8.65359477124183e-06,
+        "happiness": 0.00865359477124183
+      },
+      "withdraw_satisfaction_threshold": 0.25
+    },
+    "baseline_decay": {
+      "hunger": 0.02,
+      "housing": 0.002,
+      "injured": 0.01,
+      "happiness": 0.003
+    },
+    "meta": {
+      "group": "high_income"
+    },
+    "linked_agents": [
+      "NYC-ELITE-001",
+      "NYC-HI-002"
+    ]
+  },
+  {
+    "agent_id": "NYC-HI-002",
+    "daily_income": 240,
+    "initial_state": {
+      "savings": 12000,
+      "hunger": 0.22,
+      "housing": 0.78,
+      "injured": 0.06,
+      "utility_access": 1,
+      "education": 1,
+      "happiness": 0.62
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.08,
+        "hunger": 0.18,
+        "housing": 0.22,
+        "injured": 0.22,
+        "utility_access": 0.08,
+        "education": 0.08,
+        "happiness": 0.14
+      },
+      "migration_unsat_threshold": 0.55,
+      "budget_weights": {
+        "food": 0.28,
+        "housing": 0.28,
+        "healthcare": 0.18,
+        "utilities": 0.08,
+        "education": 0.08,
+        "happiness": 0.1
+      },
+      "dollar_impacts": {
+        "food": 0.009439737320230478,
+        "housing": 9.439737320230478e-05,
+        "healthcare": 0.0005,
+        "utilities": 6.686480601829921e-06,
+        "education": 9.439737320230477e-06,
+        "happiness": 0.009439737320230478
+      },
+      "withdraw_satisfaction_threshold": 0.27
+    },
+    "baseline_decay": {
+      "hunger": 0.02,
+      "housing": 0.002,
+      "injured": 0.01,
+      "happiness": 0.003
+    },
+    "meta": {
+      "group": "high_income"
+    },
+    "linked_agents": [
+      "NYC-HI-001",
+      "NYC-MID-003"
+    ]
+  },
+  {
+    "agent_id": "NYC-MID-001",
+    "daily_income": 150,
+    "initial_state": {
+      "savings": 5000,
+      "hunger": 0.3,
+      "housing": 0.65,
+      "injured": 0.1,
+      "utility_access": 1,
+      "education": 0,
+      "happiness": 0.5
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.05,
+        "hunger": 0.25,
+        "housing": 0.3,
+        "injured": 0.25,
+        "utility_access": 0.05,
+        "education": 0.05,
+        "happiness": 0.1
+      },
+      "migration_unsat_threshold": 0.6,
+      "budget_weights": {
+        "food": 0.35,
+        "housing": 0.3,
+        "healthcare": 0.2,
+        "utilities": 0.05,
+        "education": 0.05,
+        "happiness": 0.05
+      },
+      "dollar_impacts": {
+        "food": 0.01656426011264721,
+        "housing": 0.00016564260112647208,
+        "healthcare": 0.0005,
+        "utilities": 1.2423195084485407e-05,
+        "education": 1.6564260112647207e-05,
+        "happiness": 0.01656426011264721
+      },
+      "withdraw_satisfaction_threshold": 0.3
+    },
+    "baseline_decay": {
+      "hunger": 0.03,
+      "housing": 0.003,
+      "injured": 0.015,
+      "happiness": 0.004
+    },
+    "meta": {
+      "group": "mid_income"
+    },
+    "linked_agents": [
+      "NYC-MID-002",
+      "NYC-LO-001"
+    ]
+  },
+  {
+    "agent_id": "NYC-MID-002",
+    "daily_income": 145,
+    "initial_state": {
+      "savings": 4500,
+      "hunger": 0.32,
+      "housing": 0.63,
+      "injured": 0.11,
+      "utility_access": 1,
+      "education": 0,
+      "happiness": 0.48
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.04,
+        "hunger": 0.28,
+        "housing": 0.28,
+        "injured": 0.26,
+        "utility_access": 0.04,
+        "education": 0.04,
+        "happiness": 0.06
+      },
+      "migration_unsat_threshold": 0.65,
+      "budget_weights": {
+        "food": 0.38,
+        "housing": 0.28,
+        "healthcare": 0.22,
+        "utilities": 0.04,
+        "education": 0.04,
+        "happiness": 0.04
+      },
+      "dollar_impacts": {
+        "food": 0.015391660128535387,
+        "housing": 0.00015391660128535387,
+        "healthcare": 0.0005,
+        "utilities": 1.105042265638438e-05,
+        "education": 1.4997002176521659e-05,
+        "happiness": 0.015391660128535387
+      },
+      "withdraw_satisfaction_threshold": 0.32
+    },
+    "baseline_decay": {
+      "hunger": 0.03,
+      "housing": 0.003,
+      "injured": 0.015,
+      "happiness": 0.004
+    },
+    "meta": {
+      "group": "mid_income"
+    },
+    "linked_agents": [
+      "NYC-MID-001",
+      "NYC-MID-003"
+    ]
+  },
+  {
+    "agent_id": "NYC-MID-003",
+    "daily_income": 140,
+    "initial_state": {
+      "savings": 4000,
+      "hunger": 0.35,
+      "housing": 0.6,
+      "injured": 0.12,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.45
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.03,
+        "hunger": 0.3,
+        "housing": 0.25,
+        "injured": 0.28,
+        "utility_access": 0.03,
+        "education": 0.03,
+        "happiness": 0.08
+      },
+      "migration_unsat_threshold": 0.7,
+      "budget_weights": {
+        "food": 0.4,
+        "housing": 0.25,
+        "healthcare": 0.25,
+        "utilities": 0.03,
+        "education": 0.03,
+        "happiness": 0.04
+      },
+      "dollar_impacts": {
+        "food": 0.015507935248223335,
+        "housing": 0.00015507935248223334,
+        "healthcare": 0.0005,
+        "utilities": 1.061069253825807e-05,
+        "education": 1.469172812989579e-05,
+        "happiness": 0.015507935248223335
+      },
+      "withdraw_satisfaction_threshold": 0.35
+    },
+    "baseline_decay": {
+      "hunger": 0.035,
+      "housing": 0.0035,
+      "injured": 0.016,
+      "happiness": 0.0045
+    },
+    "meta": {
+      "group": "mid_income"
+    },
+    "linked_agents": [
+      "NYC-HI-002",
+      "NYC-LO-002"
+    ]
+  },
+  {
+    "agent_id": "NYC-MID-004",
+    "daily_income": 135,
+    "initial_state": {
+      "savings": 3500,
+      "hunger": 0.38,
+      "housing": 0.58,
+      "injured": 0.13,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.42
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.02,
+        "hunger": 0.32,
+        "housing": 0.24,
+        "injured": 0.3,
+        "utility_access": 0.02,
+        "education": 0.02,
+        "happiness": 0.1
+      },
+      "migration_unsat_threshold": 0.75,
+      "budget_weights": {
+        "food": 0.42,
+        "housing": 0.24,
+        "healthcare": 0.26,
+        "utilities": 0.02,
+        "education": 0.02,
+        "happiness": 0.04
+      },
+      "dollar_impacts": {
+        "food": 0.017521307140346103,
+        "housing": 0.00017521307140346102,
+        "healthcare": 0.0005,
+        "utilities": 1.1365172199143417e-05,
+        "education": 1.6100660615453174e-05,
+        "happiness": 0.017521307140346103
+      },
+      "withdraw_satisfaction_threshold": 0.38
+    },
+    "baseline_decay": {
+      "hunger": 0.04,
+      "housing": 0.004,
+      "injured": 0.017,
+      "happiness": 0.005
+    },
+    "meta": {
+      "group": "mid_income"
+    },
+    "linked_agents": [
+      "NYC-MID-005",
+      "NYC-LO-003"
+    ]
+  },
+  {
+    "agent_id": "NYC-MID-005",
+    "daily_income": 130,
+    "initial_state": {
+      "savings": 3000,
+      "hunger": 0.4,
+      "housing": 0.55,
+      "injured": 0.14,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.4
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.01,
+        "hunger": 0.35,
+        "housing": 0.23,
+        "injured": 0.32,
+        "utility_access": 0.01,
+        "education": 0.01,
+        "happiness": 0.12
+      },
+      "migration_unsat_threshold": 0.8,
+      "budget_weights": {
+        "food": 0.45,
+        "housing": 0.23,
+        "healthcare": 0.28,
+        "utilities": 0.01,
+        "education": 0.01,
+        "happiness": 0.02
+      },
+      "dollar_impacts": {
+        "food": 0.028823434629886235,
+        "housing": 0.00028823434629886237,
+        "healthcare": 0.0005,
+        "utilities": 1.761432116270826e-05,
+        "education": 2.56208307821211e-05,
+        "happiness": 0.028823434629886235
+      },
+      "withdraw_satisfaction_threshold": 0.4
+    },
+    "baseline_decay": {
+      "hunger": 0.045,
+      "housing": 0.0045,
+      "injured": 0.018,
+      "happiness": 0.0055
+    },
+    "meta": {
+      "group": "mid_income"
+    },
+    "linked_agents": [
+      "NYC-ELITE-002",
+      "NYC-LO-004"
+    ]
+  },
+  {
+    "agent_id": "NYC-LO-001",
+    "daily_income": 90,
+    "initial_state": {
+      "savings": 1000,
+      "hunger": 0.5,
+      "housing": 0.45,
+      "injured": 0.2,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.3
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.0,
+        "hunger": 0.4,
+        "housing": 0.2,
+        "injured": 0.3,
+        "utility_access": 0.0,
+        "education": 0.0,
+        "happiness": 0.1
+      },
+      "migration_unsat_threshold": 0.85,
+      "budget_weights": {
+        "food": 0.5,
+        "housing": 0.2,
+        "healthcare": 0.25,
+        "utilities": 0.0,
+        "education": 0.0,
+        "happiness": 0.05
+      },
+      "dollar_impacts": {
+        "food": 0.02388506555173222,
+        "housing": 0.00023885065551732218,
+        "healthcare": 0.0005,
+        "utilities": 1.5923377034488144e-05,
+        "education": 2.3885065551732217e-05,
+        "happiness": 0.02388506555173222
+      },
+      "withdraw_satisfaction_threshold": 0.45
+    },
+    "baseline_decay": {
+      "hunger": 0.05,
+      "housing": 0.005,
+      "injured": 0.02,
+      "happiness": 0.006
+    },
+    "meta": {
+      "group": "low_income"
+    },
+    "linked_agents": [
+      "NYC-MID-001",
+      "NYC-LO-002"
+    ]
+  },
+  {
+    "agent_id": "NYC-LO-002",
+    "daily_income": 85,
+    "initial_state": {
+      "savings": 800,
+      "hunger": 0.52,
+      "housing": 0.43,
+      "injured": 0.21,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.28
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.0,
+        "hunger": 0.42,
+        "housing": 0.18,
+        "injured": 0.32,
+        "utility_access": 0.0,
+        "education": 0.0,
+        "happiness": 0.08
+      },
+      "migration_unsat_threshold": 0.9,
+      "budget_weights": {
+        "food": 0.52,
+        "housing": 0.18,
+        "healthcare": 0.28,
+        "utilities": 0.0,
+        "education": 0.0,
+        "happiness": 0.02
+      },
+      "dollar_impacts": {
+        "food": 0.028827912558047755,
+        "housing": 0.00028827912558047756,
+        "healthcare": 0.0005,
+        "utilities": 1.789318710499516e-05,
+        "education": 2.7833846607770246e-05,
+        "happiness": 0.028827912558047755
+      },
+      "withdraw_satisfaction_threshold": 0.48
+    },
+    "baseline_decay": {
+      "hunger": 0.055,
+      "housing": 0.0055,
+      "injured": 0.021,
+      "happiness": 0.0065
+    },
+    "meta": {
+      "group": "low_income"
+    },
+    "linked_agents": [
+      "NYC-MID-003",
+      "NYC-LO-003"
+    ]
+  },
+  {
+    "agent_id": "NYC-LO-003",
+    "daily_income": 80,
+    "initial_state": {
+      "savings": 600,
+      "hunger": 0.55,
+      "housing": 0.4,
+      "injured": 0.22,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.25
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.0,
+        "hunger": 0.45,
+        "housing": 0.16,
+        "injured": 0.34,
+        "utility_access": 0.0,
+        "education": 0.0,
+        "happiness": 0.05
+      },
+      "migration_unsat_threshold": 0.95,
+      "budget_weights": {
+        "food": 0.55,
+        "housing": 0.16,
+        "healthcare": 0.29,
+        "utilities": 0.0,
+        "education": 0.0,
+        "happiness": 0.0
+      },
+      "dollar_impacts": {
+        "food": 0.02993891402714932,
+        "housing": 0.0002993891402714932,
+        "healthcare": 0.0005,
+        "utilities": 1.7107950872656754e-05,
+        "education": 2.7800420168067224e-05,
+        "happiness": 0.02993891402714932
+      },
+      "withdraw_satisfaction_threshold": 0.5
+    },
+    "baseline_decay": {
+      "hunger": 0.06,
+      "housing": 0.006,
+      "injured": 0.022,
+      "happiness": 0.007
+    },
+    "meta": {
+      "group": "low_income"
+    },
+    "linked_agents": [
+      "NYC-MID-004",
+      "NYC-LO-004"
+    ]
+  },
+  {
+    "agent_id": "NYC-LO-004",
+    "daily_income": 75,
+    "initial_state": {
+      "savings": 400,
+      "hunger": 0.58,
+      "housing": 0.38,
+      "injured": 0.23,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.22
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.0,
+        "hunger": 0.48,
+        "housing": 0.14,
+        "injured": 0.36,
+        "utility_access": 0.0,
+        "education": 0.0,
+        "happiness": 0.02
+      },
+      "migration_unsat_threshold": 1.0,
+      "budget_weights": {
+        "food": 0.58,
+        "housing": 0.14,
+        "healthcare": 0.28,
+        "utilities": 0.0,
+        "education": 0.0,
+        "happiness": 0.0
+      },
+      "dollar_impacts": {
+        "food": 0.03312688004163414,
+        "housing": 0.0003312688004163414,
+        "healthcare": 0.0005,
+        "utilities": 1.7176900762328814e-05,
+        "education": 2.944611559256368e-05,
+        "happiness": 0.03312688004163414
+      },
+      "withdraw_satisfaction_threshold": 0.55
+    },
+    "baseline_decay": {
+      "hunger": 0.065,
+      "housing": 0.0065,
+      "injured": 0.023,
+      "happiness": 0.0075
+    },
+    "meta": {
+      "group": "low_income"
+    },
+    "linked_agents": [
+      "NYC-MID-005",
+      "NYC-LO-005"
+    ]
+  },
+  {
+    "agent_id": "NYC-LO-005",
+    "daily_income": 70,
+    "initial_state": {
+      "savings": 200,
+      "hunger": 0.6,
+      "housing": 0.35,
+      "injured": 0.24,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.2
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.0,
+        "hunger": 0.5,
+        "housing": 0.12,
+        "injured": 0.38,
+        "utility_access": 0.0,
+        "education": 0.0,
+        "happiness": 0.0
+      },
+      "migration_unsat_threshold": 1.0,
+      "budget_weights": {
+        "food": 0.6,
+        "housing": 0.12,
+        "healthcare": 0.28,
+        "utilities": 0.0,
+        "education": 0.0,
+        "happiness": 0.0
+      },
+      "dollar_impacts": {
+        "food": 0.04189463019250254,
+        "housing": 0.00041894630192502536,
+        "healthcare": 0.0005,
+        "utilities": 1.93359831657704e-05,
+        "education": 3.5449302470579066e-05,
+        "happiness": 0.04189463019250254
+      },
+      "withdraw_satisfaction_threshold": 0.6
+    },
+    "baseline_decay": {
+      "hunger": 0.07,
+      "housing": 0.007,
+      "injured": 0.024,
+      "happiness": 0.008
+    },
+    "meta": {
+      "group": "low_income"
+    },
+    "linked_agents": [
+      "NYC-LO-004",
+      "NYC-LO-003"
+    ]
+  },
+  {
+    "agent_id": "NYC-LO-006",
+    "daily_income": 65,
+    "initial_state": {
+      "savings": 100,
+      "hunger": 0.62,
+      "housing": 0.33,
+      "injured": 0.25,
+      "utility_access": 0,
+      "education": 0,
+      "happiness": 0.18
+    },
+    "personality": {
+      "satisfaction_weights": {
+        "savings": 0.0,
+        "hunger": 0.52,
+        "housing": 0.1,
+        "injured": 0.38,
+        "utility_access": 0.0,
+        "education": 0.0,
+        "happiness": 0.0
+      },
+      "migration_unsat_threshold": 1.0,
+      "budget_weights": {
+        "food": 0.62,
+        "housing": 0.1,
+        "healthcare": 0.28,
+        "utilities": 0.0,
+        "education": 0.0,
+        "happiness": 0.0
+      },
+      "dollar_impacts": {
+        "food": 0.04603353680639975,
+        "housing": 0.0004603353680639975,
+        "healthcare": 0.0005,
+        "utilities": 1.84134147225599e-05,
+        "education": 3.68268294451198e-05,
+        "happiness": 0.04603353680639975
+      },
+      "withdraw_satisfaction_threshold": 0.65
+    },
+    "baseline_decay": {
+      "hunger": 0.075,
+      "housing": 0.0075,
+      "injured": 0.025,
+      "happiness": 0.0085
+    },
+    "meta": {
+      "group": "low_income"
+    },
+    "linked_agents": [
+      "NYC-LO-005",
+      "NYC-LO-002"
+    ]
+  }
+]

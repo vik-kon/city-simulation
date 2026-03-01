@@ -1,0 +1,132 @@
+{
+  "sim_id": "nyc_30_percent_tariff",
+  "time": {
+    "timestep": "week",
+    "num_steps": 52,
+    "seed": 42
+  },
+  "institutions": {
+    "price_tables": {
+      "food": {
+        "name": "food",
+        "unit_cost": 65.0
+      },
+      "housing": {
+        "name": "housing",
+        "unit_cost": 325.0
+      },
+      "happiness": {
+        "name": "happiness",
+        "unit_cost": 50.0
+      },
+      "healthcare": {
+        "name": "healthcare",
+        "unit_cost": 120.0
+      },
+      "utilities": {
+        "name": "utilities",
+        "unit_cost": 80.0
+      },
+      "education": {
+        "name": "education",
+        "unit_cost": 200.0
+      }
+    }
+  },
+  "dynamics": {
+    "spend_effects": {
+      "food": {
+        "target": "hunger",
+        "k": -0.03
+      },
+      "housing": {
+        "target": "housing",
+        "k": 0.02
+      },
+      "happiness": {
+        "target": "happiness",
+        "k": 0.015
+      },
+      "healthcare": {
+        "target": "injured",
+        "k": -0.02
+      },
+      "utilities": {
+        "target": "utility_access",
+        "k": 0.001
+      },
+      "education": {
+        "target": "education",
+        "k": 0.001
+      }
+    }
+  },
+  "constraints": {
+    "state_bounds": {
+      "savings": {
+        "min": 0,
+        "max": 100000
+      },
+      "hunger": {
+        "min": 0,
+        "max": 1
+      },
+      "housing": {
+        "min": 0,
+        "max": 1
+      },
+      "injured": {
+        "min": 0,
+        "max": 1
+      },
+      "utility_access": {
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "education": {
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "happiness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "terminal": {
+      "death_injured_threshold": 1.0
+    },
+    "action_limits": {
+      "max_daily_spend": 1000,
+      "allow_negative_savings": false
+    }
+  },
+  "agents": {
+    "num_agents": 15,
+    "profile_generation": {
+      "mode": "planner_llm"
+    }
+  },
+  "reporting": {
+    "representatives": {
+      "num_agents": 4,
+      "selection_rules": [
+        "highest_satisfaction",
+        "lowest_satisfaction",
+        "highest_income",
+        "lowest_income"
+      ]
+    },
+    "metrics": [
+      "avg_hunger",
+      "avg_housing",
+      "avg_injured",
+      "avg_happiness",
+      "avg_utility_access",
+      "avg_education"
+    ]
+  }
+}

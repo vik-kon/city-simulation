@@ -1,0 +1,1740 @@
+{
+  "trajectories": {
+    "NYC-ELITE-001": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 50494.475,
+          "hunger": 0.10999774226244344,
+          "housing": 0.949000001798371,
+          "injured": 0.154999965,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.8529931443818721
+        },
+        "action": {
+          "allocations": {
+            "food": 0.77,
+            "housing": 0.46,
+            "healthcare": 0.42,
+            "utilities": 0.625,
+            "education": 0.25,
+            "happiness": 3.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6880075263461072,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 50989.919,
+          "hunger": 0.11999650197285067,
+          "housing": 0.9480000027913845,
+          "injured": 0.019999945916666647,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.8642647928501457
+        },
+        "action": {
+          "allocations": {
+            "food": 0.423,
+            "housing": 0.254,
+            "healthcare": 0.229,
+            "utilities": 1.0,
+            "education": 1.0,
+            "happiness": 1.65
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.7112868472520202,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 50989.919,
+          "hunger": 0.12991586848868777,
+          "housing": 0.9470003253253212,
+          "injured": 0.02499765424999998,
+          "utility_access": 1,
+          "education": 1,
+          "happiness": 0.8688209686569683
+        },
+        "action": {
+          "allocations": {
+            "food": 27.5,
+            "housing": 82.5,
+            "healthcare": 27.5,
+            "utilities": 80.0,
+            "education": 200.0,
+            "happiness": 82.5
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.9112081399250624,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 50989.919,
+          "hunger": 0.13983523500452488,
+          "housing": 0.9460006478592579,
+          "injured": 0.05999536258333331,
+          "utility_access": 1,
+          "education": 1,
+          "happiness": 0.8832296273684286
+        },
+        "action": {
+          "allocations": {
+            "food": 27.5,
+            "housing": 82.5,
+            "healthcare": 27.5,
+            "utilities": 80.0,
+            "education": 200.0,
+            "happiness": 82.5
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.9095851774694961,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-ELITE-002": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 45000.0,
+          "hunger": 0.1298558608058608,
+          "housing": 0.9290008408119659,
+          "injured": 0.0,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.8236735407129663
+        },
+        "action": {
+          "allocations": {
+            "food": 38.4,
+            "housing": 168.0,
+            "healthcare": 38.4,
+            "utilities": 48.0,
+            "education": 33.6,
+            "happiness": 153.6
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6983076261578781,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 45000.0,
+          "hunger": 0.1397834158463065,
+          "housing": 0.9280012627193988,
+          "injured": 0.07499839166666668,
+          "utility_access": 1,
+          "education": 1,
+          "happiness": 0.8280148805620174
+        },
+        "action": {
+          "allocations": {
+            "food": 19.3,
+            "housing": 84.3,
+            "healthcare": 19.3,
+            "utilities": 80.0,
+            "education": 200.0,
+            "happiness": 77.1
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.8713763654241862,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 45000.0,
+          "hunger": 0.1496392766521673,
+          "housing": 0.9270021035313646,
+          "injured": 0.08999519166666668,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.8296932046882036
+        },
+        "action": {
+          "allocations": {
+            "food": 38.4,
+            "housing": 168.0,
+            "healthcare": 38.4,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 235.2
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6897025919502754,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 45000.0,
+          "hunger": 0.15956720705509772,
+          "housing": 0.9260025259392808,
+          "injured": 0.03499359166666669,
+          "utility_access": 1,
+          "education": 1,
+          "happiness": 0.8382342997480449
+        },
+        "action": {
+          "allocations": {
+            "food": 19.2,
+            "housing": 84.4,
+            "healthcare": 19.2,
+            "utilities": 80.0,
+            "education": 200.0,
+            "happiness": 77.2
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.8769472469528927,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-HI-001": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 15250.0,
+          "hunger": 0.22,
+          "housing": 0.798,
+          "injured": 0.0,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.6511863607385338
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6206698844533867,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 15420.0,
+          "hunger": 0.24,
+          "housing": 0.796,
+          "injured": 0.0,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.653487969440991
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.7176171047762429,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 15470.0,
+          "hunger": 0.26,
+          "housing": 0.794,
+          "injured": 0.02,
+          "utility_access": 0,
+          "education": 1,
+          "happiness": 0.658714515426757
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 200.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.71070337242127,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 15640.0,
+          "hunger": 0.28,
+          "housing": 0.792,
+          "injured": 0.05,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.6673298995445179
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.7022804298210221,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-HI-002": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 12000.0,
+          "hunger": 0.23970722291634483,
+          "housing": 0.7780003903694449,
+          "injured": 0.009996399999999996,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.620756506563109
+        },
+        "action": {
+          "allocations": {
+            "food": 67.2,
+            "housing": 67.2,
+            "healthcare": 43.2,
+            "utilities": 19.2,
+            "education": 19.2,
+            "happiness": 24.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6404323015962731,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 12000.15,
+          "hunger": 0.2594952645068237,
+          "housing": 0.7760006729806576,
+          "injured": 0.05999379416666666,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.6222036673492333
+        },
+        "action": {
+          "allocations": {
+            "food": 48.65,
+            "housing": 48.65,
+            "healthcare": 31.27,
+            "utilities": 80.0,
+            "education": 13.9,
+            "happiness": 17.38
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.7056338652823839,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 12000.16,
+          "hunger": 0.2794371883382951,
+          "housing": 0.7740007504155489,
+          "injured": 0.0,
+          "utility_access": 0,
+          "education": 1,
+          "happiness": 0.6236940516315961
+        },
+        "action": {
+          "allocations": {
+            "food": 13.33,
+            "housing": 13.33,
+            "healthcare": 8.57,
+            "utilities": 0.0,
+            "education": 200.0,
+            "happiness": 4.76
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.7150116360915234,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 11999.52,
+          "hunger": 0.2992240971602955,
+          "housing": 0.7720010345371197,
+          "injured": 0.04999737333333334,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.6264195034646842
+        },
+        "action": {
+          "allocations": {
+            "food": 48.91,
+            "housing": 48.91,
+            "healthcare": 31.52,
+            "utilities": 80.0,
+            "education": 13.91,
+            "happiness": 17.39
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.7003914571203366,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-MID-001": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 4950.0,
+          "hunger": 0.32999999999999996,
+          "housing": 0.647,
+          "injured": 0.195,
+          "utility_access": 0,
+          "education": 1,
+          "happiness": 0.4961572259635634
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 200.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6415143050733332,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 4970.0,
+          "hunger": 0.36,
+          "housing": 0.644,
+          "injured": 0.2,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.4958288187166922
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 50.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6323139335966411,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 4920.0,
+          "hunger": 0.39,
+          "housing": 0.641,
+          "injured": 0.15500000000000003,
+          "utility_access": 0,
+          "education": 1,
+          "happiness": 0.4915412596257169
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 200.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6345663452085536,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 4920.0,
+          "hunger": 0.4198012288786483,
+          "housing": 0.6380002242545985,
+          "injured": 0.29999875000000004,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.4891624346319525
+        },
+        "action": {
+          "allocations": {
+            "food": 26.0,
+            "housing": 22.0,
+            "healthcare": 15.0,
+            "utilities": 80.0,
+            "education": 4.0,
+            "happiness": 3.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5918636690726877,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-MID-002": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 4500.0,
+          "hunger": 0.34960857824319275,
+          "housing": 0.6270003845547084,
+          "injured": 0.22499734166666668,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.47670343679676974
+        },
+        "action": {
+          "allocations": {
+            "food": 55.1,
+            "housing": 40.6,
+            "healthcare": 31.9,
+            "utilities": 5.8,
+            "education": 5.8,
+            "happiness": 5.8
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5962578845159359,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 4500.5,
+          "hunger": 0.37941961601576857,
+          "housing": 0.6240005711489881,
+          "injured": 0.13999605833333337,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.4763258256758696
+        },
+        "action": {
+          "allocations": {
+            "food": 26.6,
+            "housing": 19.7,
+            "healthcare": 15.4,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 2.8
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6491489945768526,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 4501.0,
+          "hunger": 0.40923065378834445,
+          "housing": 0.6210007577432678,
+          "injured": 0.12499477500000002,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.4728290317795967
+        },
+        "action": {
+          "allocations": {
+            "food": 26.6,
+            "housing": 19.7,
+            "healthcare": 15.4,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 2.8
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.643652953645062,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 4506.8,
+          "hunger": 0.43883923203153724,
+          "housing": 0.6180011422979762,
+          "injured": 0.1399921166666667,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.4691449904213796
+        },
+        "action": {
+          "allocations": {
+            "food": 55.1,
+            "housing": 40.6,
+            "healthcare": 31.9,
+            "utilities": 5.8,
+            "education": 0.0,
+            "happiness": 5.8
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5904077740221302,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-MID-003": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 4060.0,
+          "hunger": 0.385,
+          "housing": 0.5965,
+          "injured": 0.28600000000000003,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.4491898461980522
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6055250201997271,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 4198.56,
+          "hunger": 0.4199938445426246,
+          "housing": 0.593000001049768,
+          "injured": 0.40199997583333336,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.4531243437643595
+        },
+        "action": {
+          "allocations": {
+            "food": 0.86,
+            "housing": 0.11,
+            "healthcare": 0.29,
+            "utilities": 0.05,
+            "education": 0.02,
+            "happiness": 0.11
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5320889175646111,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 3938.5600000000004,
+          "hunger": 0.4549938445426246,
+          "housing": 0.5895000010497681,
+          "injured": 0.40798997583333335,
+          "utility_access": 1,
+          "education": 1,
+          "happiness": 0.4505430428651181
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 120.0,
+            "utilities": 80.0,
+            "education": 200.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5786368387761883,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 3958.1600000000003,
+          "hunger": 0.4899938445426246,
+          "housing": 0.5860000010497681,
+          "injured": 0.49397997583333336,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.4488881685621577
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 0.0,
+            "healthcare": 120.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.4
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.48306704466060046,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-MID-004": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 3500.98,
+          "hunger": 0.41980939513417015,
+          "housing": 0.5760001452381582,
+          "injured": 0.04699877166666668,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.415030051207216
+        },
+        "action": {
+          "allocations": {
+            "food": 23.57,
+            "housing": 13.47,
+            "healthcare": 14.74,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 2.24
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6618103757030295,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 3503.68,
+          "hunger": 0.45935087600423585,
+          "housing": 0.5720004945860667,
+          "injured": 0.18399584666666668,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.41040682795989436
+        },
+        "action": {
+          "allocations": {
+            "food": 56.7,
+            "housing": 32.4,
+            "healthcare": 35.1,
+            "utilities": 2.7,
+            "education": 0.0,
+            "happiness": 5.4
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5881111677333576,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 3503.68,
+          "hunger": 0.4991559851571209,
+          "housing": 0.5680006433823981,
+          "injured": 0.20099460500000002,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.4051991982966104
+        },
+        "action": {
+          "allocations": {
+            "food": 24.1,
+            "housing": 13.8,
+            "healthcare": 14.9,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 2.2
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5887798052979341,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 3503.68,
+          "hunger": 0.5386974660271866,
+          "housing": 0.5640009927303066,
+          "injured": 0.36799168000000004,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.3995365810395514
+        },
+        "action": {
+          "allocations": {
+            "food": 56.7,
+            "housing": 32.4,
+            "healthcare": 35.1,
+            "utilities": 2.7,
+            "education": 0.0,
+            "happiness": 8.1
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.506153752101239,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-MID-005": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 3000.0,
+          "hunger": 0.4442217672649931,
+          "housing": 0.5455005303511973,
+          "injured": 0.10799696666666667,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.39652958125957394
+        },
+        "action": {
+          "allocations": {
+            "food": 58.5,
+            "housing": 29.9,
+            "healthcare": 36.4,
+            "utilities": 1.3,
+            "education": 1.3,
+            "happiness": 2.6
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.6235657853937259,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 3000.0,
+          "hunger": 0.48855661108122644,
+          "housing": 0.5410005303511973,
+          "injured": 0.25599696666666666,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.39471993781217385
+        },
+        "action": {
+          "allocations": {
+            "food": 50.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5720140210609929,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 3000.0,
+          "hunger": 0.5327783783462195,
+          "housing": 0.5365010607023946,
+          "injured": 0.36399393333333335,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.3916199703125662
+        },
+        "action": {
+          "allocations": {
+            "food": 58.5,
+            "housing": 29.9,
+            "healthcare": 36.4,
+            "utilities": 1.3,
+            "education": 1.3,
+            "happiness": 2.6
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5134963810655087,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 3000.0,
+          "hunger": 0.577472406501687,
+          "housing": 0.5320012700048737,
+          "injured": 0.43199275000000004,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.38483499505583907
+        },
+        "action": {
+          "allocations": {
+            "food": 23.0,
+            "housing": 11.8,
+            "healthcare": 14.2,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 1.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.485637638133143,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-LO-001": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 1000.0,
+          "hunger": 0.5499448806179575,
+          "housing": 0.4450000293970038,
+          "injured": 0.3299997916666667,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.2973323456094235
+        },
+        "action": {
+          "allocations": {
+            "food": 5.0,
+            "housing": 2.0,
+            "healthcare": 2.5,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 0.5
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.4997553506931601,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 1087.79,
+          "hunger": 0.5999352898454822,
+          "housing": 0.44000004409550564,
+          "injured": 0.4899997725000001,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.2934288542492904
+        },
+        "action": {
+          "allocations": {
+            "food": 0.87,
+            "housing": 1.0,
+            "healthcare": 0.23,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.11
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.4303688465558373,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 1172.72,
+          "hunger": 0.6499341874578414,
+          "housing": 0.4850000587940075,
+          "injured": 0.46999968916666673,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.3196904274398701
+        },
+        "action": {
+          "allocations": {
+            "food": 0.1,
+            "housing": 1.0,
+            "healthcare": 1.0,
+            "utilities": 1.0,
+            "education": 0.0,
+            "happiness": 1.97
+          },
+          "migrate": 1
+        },
+        "engine_satisfaction": 0.42799547276965194,
+        "flags": {
+          "is_dead": false,
+          "migrated": true
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 797.72,
+          "hunger": 0.6992176354912895,
+          "housing": 0.5300000587940075,
+          "injured": 0.37998968916666676,
+          "utility_access": 1,
+          "education": 1,
+          "happiness": 0.34568531534525143
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 120.0,
+            "utilities": 80.0,
+            "education": 200.0,
+            "happiness": 0.0
+          },
+          "migrate": 1
+        },
+        "engine_satisfaction": 0.4468845823468109,
+        "flags": {
+          "is_dead": false,
+          "migrated": true
+        }
+      }
+    ],
+    "NYC-LO-002": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 880.52,
+          "hunger": 0.574975385397739,
+          "housing": 0.42450001774025387,
+          "injured": 0.14099995499999998,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.2740893515791563
+        },
+        "action": {
+          "allocations": {
+            "food": 1.85,
+            "housing": 1.0,
+            "healthcare": 0.54,
+            "utilities": 1.0,
+            "education": 0.0,
+            "happiness": 0.09
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5517275038525279,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 962.52,
+          "hunger": 0.6299620802073276,
+          "housing": 0.41900003548050774,
+          "injured": 0.19199995499999997,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.2668479538068266
+        },
+        "action": {
+          "allocations": {
+            "food": 1.0,
+            "housing": 1.0,
+            "healthcare": 0.0,
+            "utilities": 1.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.51074378340396,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 1042.02,
+          "hunger": 0.6849487750169162,
+          "housing": 0.4135000532207616,
+          "injured": 0.34299995499999997,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.2597249548772495
+        },
+        "action": {
+          "allocations": {
+            "food": 1.0,
+            "housing": 1.0,
+            "healthcare": 0.0,
+            "utilities": 1.0,
+            "education": 0.0,
+            "happiness": 2.5
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.4377695348628122,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 1123.02,
+          "hunger": 0.7399354698265048,
+          "housing": 0.4080000709610155,
+          "injured": 0.22399995499999997,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.25138896881247746
+        },
+        "action": {
+          "allocations": {
+            "food": 1.0,
+            "housing": 1.0,
+            "healthcare": 0.0,
+            "utilities": 1.0,
+            "education": 0.0,
+            "happiness": 1.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.45109824735084897,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-LO-003": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 600.0,
+          "hunger": 0.6088945631743823,
+          "housing": 0.444,
+          "injured": 0.272,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.276359263963668
+        },
+        "action": {
+          "allocations": {
+            "food": 80.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 1
+        },
+        "engine_satisfaction": 0.5083754097697114,
+        "flags": {
+          "is_dead": false,
+          "migrated": true
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 290.0,
+          "hunger": 0.6679963957535678,
+          "housing": 0.4380059877828054,
+          "injured": 0.17400000000000004,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.2695371017393001
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 325.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5137994350431083,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 0.0,
+          "hunger": 0.7275348374956492,
+          "housing": 0.4820090648378582,
+          "injured": 0.276,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.28823317753017214
+        },
+        "action": {
+          "allocations": {
+            "food": 33.40277777777777,
+            "housing": 167.01388888888889,
+            "healthcare": 0.0,
+            "utilities": 41.11111111111111,
+            "education": 102.77777777777777,
+            "happiness": 25.694444444444443
+          },
+          "migrate": 1
+        },
+        "engine_satisfaction": 0.46030243237752383,
+        "flags": {
+          "is_dead": false,
+          "migrated": true
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 0.0,
+          "hunger": 0.7866366700748347,
+          "housing": 0.5260090648378583,
+          "injured": 0.31800000000000006,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.30779194161191475
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 15.0
+          },
+          "migrate": 1
+        },
+        "engine_satisfaction": 0.42744454592097747,
+        "flags": {
+          "is_dead": false,
+          "migrated": true
+        }
+      }
+    ],
+    "NYC-LO-004": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 20.0,
+          "hunger": 0.645,
+          "housing": 0.3735066253760083,
+          "injured": 0.403,
+          "utility_access": 1,
+          "education": 0,
+          "happiness": 0.21583819805070373
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0,
+            "housing": 325.0,
+            "healthcare": 0.0,
+            "utilities": 80.0,
+            "education": 0.0,
+            "happiness": 50.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.4419276915136552,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 94.1988,
+          "hunger": 0.7099996804530186,
+          "housing": 0.4170066253760083,
+          "injured": 0.535999934975,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.23704756068872593
+        },
+        "action": {
+          "allocations": {
+            "food": 0.0209,
+            "housing": 0.0,
+            "healthcare": 0.7803,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 1
+        },
+        "engine_satisfaction": 0.36936205555796675,
+        "flags": {
+          "is_dead": false,
+          "migrated": true
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 167.99880000000002,
+          "hunger": 0.7749843911237686,
+          "housing": 0.4605066253760083,
+          "injured": 0.558999934975,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.25508199932955994
+        },
+        "action": {
+          "allocations": {
+            "food": 1.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.2
+          },
+          "migrate": 1
+        },
+        "engine_satisfaction": 0.33634008320882347,
+        "flags": {
+          "is_dead": false,
+          "migrated": true
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 241.79880000000003,
+          "hunger": 0.8399691017945186,
+          "housing": 0.4540066253760083,
+          "injured": 0.551999934975,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.24192633137159733
+        },
+        "action": {
+          "allocations": {
+            "food": 1.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.2
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.30649430872770417,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-LO-005": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 200.0,
+          "hunger": 0.6687431610942248,
+          "housing": 0.34299999999999997,
+          "injured": 0.28400000000000003,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.19215355007482818
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 5.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.4788684194528876,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 0.0,
+          "hunger": 0.7380506172073691,
+          "housing": 0.33600461695924566,
+          "injured": 0.36800000000000005,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.17977761175682633
+        },
+        "action": {
+          "allocations": {
+            "food": 35.816326530612244,
+            "housing": 179.0816326530612,
+            "healthcare": 0.0,
+            "utilities": 44.08163265306122,
+            "education": 0.0,
+            "happiness": 11.020408163265305
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.41145524543142487,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 5.0,
+          "hunger": 0.806793778301594,
+          "housing": 0.32900461695924565,
+          "injured": 0.4620000000000001,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.16642335513548642
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.3405236648843124,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 10.0,
+          "hunger": 0.8755369393958189,
+          "housing": 0.32200461695924565,
+          "injured": 0.39600000000000013,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.15188503235562412
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.33039208433719996,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ],
+    "NYC-LO-006": [
+      {
+        "t": 0,
+        "state": {
+          "savings": 100.0,
+          "hunger": 0.693618993895808,
+          "housing": 0.3225,
+          "injured": 0.16500000000000004,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.17149999999999999
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.5088681231741798,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 1,
+        "state": {
+          "savings": 100.0,
+          "hunger": 0.7672379877916159,
+          "housing": 0.315,
+          "injured": 0.24000000000000005,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.16299999999999998
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.4413362463483598,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 2,
+        "state": {
+          "savings": 100.0,
+          "hunger": 0.8408569816874238,
+          "housing": 0.3075,
+          "injured": 0.13500000000000006,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.15449999999999997
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.4422043695225396,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      },
+      {
+        "t": 3,
+        "state": {
+          "savings": 100.0,
+          "hunger": 0.9144759755832318,
+          "housing": 0.3,
+          "injured": 0.05000000000000006,
+          "utility_access": 0,
+          "education": 0,
+          "happiness": 0.14599999999999996
+        },
+        "action": {
+          "allocations": {
+            "food": 65.0,
+            "housing": 0.0,
+            "healthcare": 0.0,
+            "utilities": 0.0,
+            "education": 0.0,
+            "happiness": 0.0
+          },
+          "migrate": 0
+        },
+        "engine_satisfaction": 0.43547249269671945,
+        "flags": {
+          "is_dead": false,
+          "migrated": false
+        }
+      }
+    ]
+  },
+  "aggregates": {
+    "mean_final_satisfaction": 0.5496080300489206,
+    "min_final_satisfaction": 0.30649430872770417,
+    "max_final_satisfaction": 0.9095851774694961
+  },
+  "warnings": {
+    "NYC-ELITE-001": [],
+    "NYC-ELITE-002": [],
+    "NYC-HI-001": [],
+    "NYC-HI-002": [],
+    "NYC-MID-001": [],
+    "NYC-MID-002": [],
+    "NYC-MID-003": [],
+    "NYC-MID-004": [],
+    "NYC-MID-005": [],
+    "NYC-LO-001": [],
+    "NYC-LO-002": [],
+    "NYC-LO-003": [
+      "t=2:total_spend>available_scaled"
+    ],
+    "NYC-LO-004": [],
+    "NYC-LO-005": [
+      "t=1:total_spend>available_scaled"
+    ],
+    "NYC-LO-006": []
+  }
+}

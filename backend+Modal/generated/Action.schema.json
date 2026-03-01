@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Action",
+  "type": "object",
+  "properties": {
+    "allocations": {
+      "type": "object",
+      "properties": {
+        "food": {
+          "type": "number",
+          "minimum": 0
+        },
+        "housing": {
+          "type": "number",
+          "minimum": 0
+        },
+        "healthcare": {
+          "type": "number",
+          "minimum": 0
+        },
+        "utilities": {
+          "type": "number",
+          "minimum": 0
+        },
+        "education": {
+          "type": "number",
+          "minimum": 0
+        },
+        "happiness": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "food",
+        "housing",
+        "healthcare",
+        "utilities",
+        "education",
+        "happiness"
+      ]
+    },
+    "migrate": {
+      "type": "integer",
+      "enum": [
+        0,
+        1
+      ]
+    }
+  },
+  "required": [
+    "allocations",
+    "migrate"
+  ]
+}
