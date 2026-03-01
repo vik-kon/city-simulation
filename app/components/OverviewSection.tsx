@@ -5,49 +5,38 @@ import { useSimulation } from '@/app/context/SimulationContext';
 
 export function OverviewSection() {
   const { simulationData } = useSimulation();
-
   if (!simulationData) {
     return <div className="w-full h-screen flex items-center justify-center">No data</div>;
   }
 
-  const { aggregateMetrics, winners, losers, prompt, assumptions } = simulationData;
+  const { aggregateMetrics, prompt, assumptions = [] } = simulationData;
 
   const kpis = [
     {
       label: 'Net Change in Savings',
-      value: `+${aggregateMetrics.consumerPriceIndex}%`,
-      type: 'neg' as const,
-      delta: 'per agent',
+      value: `${aggregateMetrics.netSavingsChange >= 0 ? '+' : ''}${aggregateMetrics.netSavingsChange.toFixed(2)}`,
+      type: aggregateMetrics.netSavingsChange >= 0 ? 'pos' as const : 'neg' as const,
+      delta: 'avg across all agents',
     },
     {
       label: 'Net Change in Happiness',
-      value: `−$${Math.abs(aggregateMetrics.householdRealIncome)}`,
-      type: 'neg' as const,
-      delta: 'per agent',
+      value: `${aggregateMetrics.netHappinessChange >= 0 ? '+' : ''}${aggregateMetrics.netHappinessChange.toFixed(2)}`,
+      type: aggregateMetrics.netHappinessChange >= 0 ? 'pos' as const : 'neg' as const,
+      delta: 'avg across all agents',
     },
     {
       label: 'Number of Deaths',
-      value: `${aggregateMetrics.employmentImpact}%`,
+      value: `${aggregateMetrics.deaths}`,
       type: 'neg' as const,
       delta: 'scaled to city population',
     },
     {
       label: 'Number of Emigrants',
-      value: `+$${aggregateMetrics.municipalRevenue}M`,
-      type: 'pos' as const,
+      value: `${aggregateMetrics.emigrants}`,
+      type: 'neg' as const,
       delta: 'scaled to city population',
     },
   ];
-
-  const benefits = winners.map((text, i) => ({
-    text,
-    tag: i === 0 ? `+$${aggregateMetrics.municipalRevenue}M` : i === 1 ? '+1.8% output' : undefined,
-  }));
-
-  const costs = losers.map((text, i) => ({
-    text,
-    tag: i === 0 ? 'most exposed' : i === 2 ? '−2.1% formation' : undefined,
-  }));
 
   return (
     <div className="min-w-full h-full px-[60px] pt-[90px] pb-10 flex flex-col relative">
@@ -85,16 +74,14 @@ export function OverviewSection() {
             >
               {kpi.value}
             </div>
-            <div className="text-[11px] text-muted">
-              {kpi.delta} · <span className="text-muted-foreground">{kpi.sub}</span>
-            </div>
+            <div className="text-[11px] text-muted">{kpi.delta}</div>
           </motion.div>
         ))}
       </motion.div>
 
       {/* Lower Grid */}
       <div className="grid grid-cols-2 gap-5 flex-1">
-        {/* Policy + Stats */}
+        {/* Policy + Assumptions */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +109,7 @@ export function OverviewSection() {
           </div>
         </motion.div>
 
-        {/* Winners / Losers */}
+        {/* Winner / Loser */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,35 +120,13 @@ export function OverviewSection() {
             <div className="text-[9px] tracking-[0.25em] text-positive/80 uppercase mb-4 pb-3 border-b border-primary/20">
               ↑ Who Benefits
             </div>
-            <ul className="flex flex-col gap-2">
-              {benefits.map((b, i) => (
-                <li key={i} className="text-xs text-muted-foreground flex items-center gap-2 leading-[1.4]">
-                  {b.text}
-                  {b.tag && (
-                    <span className="text-[9px] tracking-[0.12em] text-primary bg-primary/10 px-2 py-0.5 whitespace-nowrap shrink-0">
-                      {b.tag}
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <p className="text-xs text-muted-foreground">{aggregateMetrics.winner}</p>
           </div>
           <div className="bg-card border border-primary/[0.15] p-6">
             <div className="text-[9px] tracking-[0.25em] text-negative/80 uppercase mb-4 pb-3 border-b border-primary/20">
               ↓ Who Bears Cost
             </div>
-            <ul className="flex flex-col gap-2">
-              {costs.map((c, i) => (
-                <li key={i} className="text-xs text-muted-foreground flex items-center gap-2 leading-[1.4]">
-                  {c.text}
-                  {c.tag && (
-                    <span className="text-[9px] tracking-[0.12em] text-primary bg-primary/10 px-2 py-0.5 whitespace-nowrap shrink-0">
-                      {c.tag}
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <p className="text-xs text-muted-foreground">{aggregateMetrics.loser}</p>
           </div>
         </motion.div>
       </div>

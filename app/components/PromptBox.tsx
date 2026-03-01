@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSimulation } from "@/app/context/SimulationContext";
 import { useRouter } from "next/navigation";
-import { runSimulation } from "@/app/lib/api";
+
 
 export default function PromptBox({
   onSimulateAction,
@@ -14,9 +14,8 @@ export default function PromptBox({
 }) {
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const { setSimulationData } = useSimulation();
   const router = useRouter();
-
+  const { runSimulation } = useSimulation();
   const handleSimulate = async () => {
     if (!value.trim()) return;
 
@@ -24,8 +23,7 @@ export default function PromptBox({
     onSimulateAction();
 
     try {
-      const data = await runSimulation(value.trim());
-      setSimulationData(data);
+      await runSimulation(value.trim());
       router.push("/results");
     } catch (err) {
       const message = err instanceof Error ? err.message : "Something went wrong.";
