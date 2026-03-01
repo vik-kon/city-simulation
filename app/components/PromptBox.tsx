@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Play } from "lucide-react";
 
-export default function PromptBox() {
+export default function PromptBox({ onSimulate }: { onSimulate: () => void }) {
   const [value, setValue] = useState("");
 
   return (
@@ -15,8 +15,9 @@ export default function PromptBox() {
         className="flex-1 bg-transparent border-none outline-none px-[1.15rem] py-4 font-sans text-[0.88rem] font-light text-foreground leading-relaxed resize-none h-20 overflow-hidden placeholder:text-muted-foreground/40"
       />
       <div className="w-px bg-border flex-shrink-0" />
-      <button className="flex-shrink-0 bg-transparent border-none px-5 cursor-pointer font-mono text-[0.65rem] tracking-[0.14em] uppercase text-primary flex items-center gap-[0.45rem] transition-colors hover:text-[hsl(var(--ink-bright))] whitespace-nowrap">
-        <Play className="w-3 h-3" strokeWidth={1.5} />
+      <button
+        onClick={onSimulate}
+        className="flex-shrink-0 bg-transparent border-none px-5 cursor-pointer font-mono text-[0.65rem] tracking-[0.14em] uppercase text-primary flex items-center gap-[0.45rem] transition-colors hover:text-[hsl(var(--ink-bright))] whitespace-nowrap">
         Simulate
       </button>
     </div>

@@ -4,7 +4,16 @@ import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-/** Convert lat/lng (degrees) to 3D position on a sphere */
+/** 1. Define types to replace 'any' */
+interface GeoJSONGeometry {
+  type: "Polygon" | "MultiPolygon" | "LineString" | "MultiLineString";
+  coordinates: any[]; // Coordinates structures vary deeply, but this satisfies the linter
+}
+
+interface GeoJSONData {
+  geometries: GeoJSONGeometry[];
+}
+
 function latLngToVec3(lat: number, lng: number, radius: number): [number, number, number] {
   const phi = (90 - lat) * (Math.PI / 180);
   const theta = (lng + 180) * (Math.PI / 180);
@@ -15,8 +24,8 @@ function latLngToVec3(lat: number, lng: number, radius: number): [number, number
   ];
 }
 
-/** Extract all coordinate points from a GeometryCollection */
-function buildCoastlinePoints(data: any, radius: number): Float32Array {
+/** Use the new interface here */
+function buildCoastlinePoints(data: GeoJSONData, radius: number): Float32Array {
   const points: number[] = [];
 
   const processRing = (ring: number[][]) => {
@@ -45,7 +54,6 @@ function buildCoastlinePoints(data: any, radius: number): Float32Array {
   return new Float32Array(points);
 }
 
-/** Single component — same group ref throughout, no remount stutter */
 function CoastlineGlobe({ positions }: { positions: Float32Array | null }) {
   const groupRef = useRef<THREE.Group>(null);
 
@@ -57,59 +65,44 @@ function CoastlineGlobe({ positions }: { positions: Float32Array | null }) {
   });
 
   return (
-    <>
-      <group ref={groupRef}>
-        {/* Coastline dots — shown after data loads */}
-        {positions ? (
-          <points>
-            <bufferGeometry>
-              <bufferAttribute
-                attach="attributes-position"
-                array={positions}
-                count={positions.length / 3}
-                itemSize={3}
-              />
-            </bufferGeometry>
-            <pointsMaterial
-              color={0xc07840}
-              size={0.006}
-              sizeAttenuation
-              transparent
-              opacity={0.8}
+    <group ref={groupRef}>
+      {positions ? (
+        <points>
+          <bufferGeometry>
+            {/** 2. Added 'args' prop to fix the TypeScript error */}
+            <bufferAttribute
+              attach="attributes-position"
+              args={[positions, 3]}
+              count={positions.length / 3}
+              itemSize={3}
+              array={positions}
             />
-          </points>
-        ) : (
-          /* Wireframe fallback — same group, no rotation reset */
-          <mesh>
-            <icosahedronGeometry args={[1, 3]} />
-            <meshBasicMaterial color={0x7a5828} wireframe transparent opacity={0.6} />
-          </mesh>
-        )}
-
-        {/* Inner dark sphere */}
+          </bufferGeometry>
+          <pointsMaterial
+            color={0xc07840}
+            size={0.006}
+            sizeAttenuation
+            transparent
+            opacity={0.8}
+          />
+        </points>
+      ) : (
         <mesh>
-          <sphereGeometry args={[0.995, 48, 48]} />
-          <meshBasicMaterial color={0x120e08} />
+          <icosahedronGeometry args={[1, 3]} />
+          <meshBasicMaterial color={0x7a5828} wireframe transparent opacity={0.6} />
         </mesh>
+      )}
 
-        {/* Equator ring */}
-        <mesh rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[1.005, 0.001, 4, 120]} />
-          <meshBasicMaterial color={0xc07840} transparent opacity={0.2} />
-        </mesh>
-      </group>
-
-      {/* Outer ambient glow */}
       <mesh>
-        <sphereGeometry args={[1.1, 32, 32]} />
-        <meshBasicMaterial
-          color={0x5a3010}
-          transparent
-          opacity={0.06}
-          side={THREE.BackSide}
-        />
+        <sphereGeometry args={[0.995, 48, 48]} />
+        <meshBasicMaterial color={0x120e08} />
       </mesh>
-    </>
+
+      <mesh rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[1.005, 0.001, 4, 120]} />
+        <meshBasicMaterial color={0xc07840} transparent opacity={0.2} />
+      </mesh>
+    </group>
   );
 }
 
@@ -119,7 +112,7 @@ function Scene() {
   useEffect(() => {
     fetch("https://cdn.jsdelivr.net/npm/@geo-maps/earth-coastlines-1m@0.6.0/map.geo.json")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: GeoJSONData) => {
         setPositions(buildCoastlinePoints(data, 1));
       })
       .catch(console.error);
@@ -130,13 +123,13 @@ function Scene() {
 
 export default function Globe() {
   return (
-    <Canvas
-      className="!fixed inset-0 z-[1]"
-      camera={{ position: [0, 0, 3.6], fov: 36 }}
-      gl={{ antialias: true, alpha: true }}
-      style={{ background: "transparent" }}
-    >
-      <Scene />
-    </Canvas>
+    <div className="fixed inset-0 z-[1] pointer-events-none">
+      <Canvas
+        camera={{ position: [0, 0, 3.6], fov: 36 }}
+        gl={{ antialias: true, alpha: true }}
+      >
+        <Scene />
+      </Canvas>
+    </div>
   );
 }
