@@ -8,8 +8,23 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-const GROUPS = ["low_income", "mid_income", "high_income", "elite"];
+const GROUPS = ["low_income", "mid_income", "high_income", "elite"] as const;
 const FIELDS = ["hunger", "housing", "injured", "education", "savings", "happiness"];
+
+const safeFetch = async (url: string, options?: RequestInit) => {
+  try {
+    const res = await fetch(url, options);
+    if (!res.ok) {
+      const text = await res.text();
+      console.error(`[simulate] Failed ${url}:`, res.status, text);
+      return { data: null };
+    }
+    return res.json();
+  } catch (e) {
+    console.error(`[simulate] Exception ${url}:`, e);
+    return { data: null };
+  }
+};
 
 async function pollUntilDone(): Promise<void> {
   while (true) {
@@ -28,7 +43,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'prompt is required' }, { status: 400 });
   }
 
-  // Start simulation
   const startRes = await fetch(`${BASE}/api/v1/run`, {
     method: 'POST',
     headers,
@@ -39,33 +53,55 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Failed to start simulation' }, { status: 502 });
   }
 
-  // Wait for simulation to finish
   await pollUntilDone();
 
-  // Fetch all data in parallel
-  const [deadRes, migratedRes, winnerRes, loserRes, ...groupResults] = await Promise.all([
-    fetch(`${BASE}/api/v1/data/figures/dead`,     { headers }).then(r => r.json()),
-    fetch(`${BASE}/api/v1/data/figures/migrated`, { headers }).then(r => r.json()),
-    fetch(`${BASE}/api/v1/data/figures/winner`,   { headers }).then(r => r.json()),
-    fetch(`${BASE}/api/v1/data/figures/loser`,    { headers }).then(r => r.json()),
+  const agentsRes = await safeFetch(`${BASE}/api/v1/agents`, {
+  method: 'POST',
+  headers,
+  body: JSON.stringify({}),
+});
+
+  const agentIds: string[] = agentsRes?.data ? Object.keys(agentsRes.data) : [];
+
+  const [deadRes, migratedRes, winnerRes, loserRes, ...rest] = await Promise.all([
+    safeFetch(`${BASE}/api/v1/data/figures/dead`,     { headers }),
+    safeFetch(`${BASE}/api/v1/data/figures/migrated`, { headers }),
+    safeFetch(`${BASE}/api/v1/data/figures/winner`,   { headers }),
+    safeFetch(`${BASE}/api/v1/data/figures/loser`,    { headers }),
     ...GROUPS.map(group =>
-      fetch(`${BASE}/api/v1/data/bulk`, {
+      safeFetch(`${BASE}/api/v1/data/bulk`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ status: [group], fields: FIELDS }),
-      }).then(r => r.json())
+      })
+    ),
+    ...agentIds.map(id =>
+      safeFetch(`${BASE}/api/v1/data/agents`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          id,
+          fields: ['savings', 'hunger', 'housing', 'injured', 'education', 'happiness'],
+        }),
+      })
     ),
   ]);
 
-  // Build populationData map
+  const groupResults = rest.slice(0, GROUPS.length);
+  const agentResults = rest.slice(GROUPS.length);
+
   const populationData: Record<string, Record<string, number[]>> = {};
   GROUPS.forEach((group, i) => {
-    populationData[group] = groupResults[i].data;
+    populationData[group] = groupResults[i]?.data ?? {};
   });
 
-  // Calculate net changes from low_income savings/happiness as aggregate proxy
-  const savingsSeries:   number[] = populationData['low_income'].savings   ?? [];
-  const happinessSeries: number[] = populationData['low_income'].happiness ?? [];
+  const agentsData: Record<string, Record<string, number[]>> = {};
+  agentIds.forEach((id, i) => {
+    agentsData[id] = agentResults[i]?.data ?? {};
+  });
+
+  const savingsSeries:   number[] = populationData['low_income']?.savings   ?? [];
+  const happinessSeries: number[] = populationData['low_income']?.happiness ?? [];
 
   const netSavingsChange   = savingsSeries.length   ? savingsSeries[savingsSeries.length - 1]   - savingsSeries[0]   : 0;
   const netHappinessChange = happinessSeries.length ? happinessSeries[happinessSeries.length - 1] - happinessSeries[0] : 0;
@@ -75,20 +111,25 @@ export async function POST(req: NextRequest) {
     aggregateMetrics: {
       netSavingsChange:   parseFloat(netSavingsChange.toFixed(3)),
       netHappinessChange: parseFloat(netHappinessChange.toFixed(3)),
-      deaths:    deadRes.data.dead,
-      emigrants: migratedRes.data.migrated,
-      winner:    winnerRes.data.winner,
-      loser:     loserRes.data.winner,
+      deaths:    deadRes?.data?.dead     ?? 0,
+      emigrants: migratedRes?.data?.migrated ?? 0,
+      winner:    winnerRes?.data?.winner ?? '',
+      loser:     loserRes?.data?.winner  ?? '',
     },
     agentTimeSeries: savingsSeries.map((value, i) => ({
       step:      i + 1,
       savings:   value,
-      happiness: happinessSeries[i],
+      happiness: happinessSeries[i] ?? 0,
     })),
     populationData,
+    agentsData,
     assumptions: [],
     timestamp: new Date().toISOString(),
   };
+
+  console.log('[simulate] data keys:', Object.keys(data));
+  console.log('[simulate] populationData keys:', Object.keys(populationData));
+  console.log('[simulate] agentsData keys:', Object.keys(agentsData));
 
   return NextResponse.json(data);
 }

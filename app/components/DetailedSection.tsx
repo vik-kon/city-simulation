@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer,
-  AreaChart, Area, Line, Tooltip, Legend, Cell,
+  AreaChart, Area, Tooltip, Cell,
 } from 'recharts';
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
@@ -12,11 +12,11 @@ import {
 import { useSimulation } from '@/app/context/SimulationContext';
 
 type PopGroup = 'all' | 'low_income' | 'mid_income' | 'high_income' | 'elite';
-type StatKey = 'hunger' | 'housing' | 'injured' | 'education' | 'savings' | 'happiness';
+type StatKey = 'hunger' | 'housing' | 'injured' | 'savings' | 'happiness';
 
 const statLabels: Record<StatKey, string> = {
   hunger: 'Hunger', housing: 'Housing', injured: 'Injury',
-  education: 'Education', savings: 'Savings', happiness: 'Happiness',
+  savings: 'Savings', happiness: 'Happiness',
 };
 
 const popLabels: Record<PopGroup, string> = {
@@ -104,10 +104,10 @@ export function DetailedSection() {
         <div className="flex items-end justify-between mb-10">
           <div>
             <h1 className="font-display italic text-[clamp(32px,4vw,52px)] font-normal leading-[1.1] mb-1.5 text-foreground">
-              Stratified Impact by Segment
+              Stratified Impact by Income
             </h1>
             <div className="text-[11px] tracking-[0.15em] text-muted uppercase">
-              Income cohorts · Sector breakdown · Temporal dynamics
+              4 distinct income Levels
             </div>
           </div>
           <div className="flex gap-3">

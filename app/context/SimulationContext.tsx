@@ -25,6 +25,14 @@ export interface SimulationData {
     savings:   number[];
     happiness: number[];
   }>;
+  agentsData: Record<string, {
+    savings:   number[];
+    hunger:    number[];
+    housing:   number[];
+    injured:   number[];
+    education: number[];
+    happiness: number[];
+  }>;
   assumptions: string[];
   timestamp: Date;
 }
@@ -60,9 +68,8 @@ export function SimulationProvider({ children }: { children: React.ReactNode }) 
       }
 
       const data = await res.json();
-      console.log('simulation data:', data);
-
       setSimulationData({ ...data, timestamp: new Date(data.timestamp) });
+      console.log('data received:', JSON.stringify(data, null, 2));
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong');
     } finally {
