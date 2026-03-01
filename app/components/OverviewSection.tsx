@@ -41,7 +41,7 @@
   aggregateMetrics.deaths === 0
     ? ('neutral' as const)
     : ('neg' as const),
-      delta: 'total out of 20 agents',
+      delta: 'total out of 15 agents',
     },
     {
       label: 'Number of Emigrants',
@@ -50,7 +50,7 @@
   aggregateMetrics.emigrants === 0
     ? ('neutral' as const)
     : ('neg' as const),
-      delta: 'total out of 20 agents',
+      delta: 'total out of 15 agents',
     },
   ];
 

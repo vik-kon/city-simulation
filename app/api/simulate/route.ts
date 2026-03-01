@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
   const startRes = await fetch(`${BASE}/api/v1/run`, {
     method: 'POST',
     headers,
-    body: JSON.stringify({ prompt: prompt.trim(), num_workers: 5 }),
+    body: JSON.stringify({ prompt: prompt.trim(), num_workers: 15 }),
   });
 
   if (!startRes.ok) {
