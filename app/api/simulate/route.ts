@@ -55,19 +55,20 @@ export async function POST(req: NextRequest) {
 
   await pollUntilDone();
 
-  const agentsRes = await safeFetch(`${BASE}/api/v1/agents`, {
-  method: 'POST',
-  headers,
-  body: JSON.stringify({}),
-});
+  // Get agent IDs dynamically
+  const agentsListRes = await safeFetch(`${BASE}/api/v1/agents`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({}),
+  });
+  const agentIds: string[] = agentsListRes?.data ? Object.keys(agentsListRes.data) : [];
 
-  const agentIds: string[] = agentsRes?.data ? Object.keys(agentsRes.data) : [];
-
-  const [deadRes, migratedRes, winnerRes, loserRes, ...rest] = await Promise.all([
+  const [deadRes, migratedRes, winnerRes, loserRes, assumptionsRes, ...rest] = await Promise.all([
     safeFetch(`${BASE}/api/v1/data/figures/dead`,     { headers }),
     safeFetch(`${BASE}/api/v1/data/figures/migrated`, { headers }),
     safeFetch(`${BASE}/api/v1/data/figures/winner`,   { headers }),
     safeFetch(`${BASE}/api/v1/data/figures/loser`,    { headers }),
+    safeFetch(`${BASE}/api/v1/data/assumptions`,      { headers }),
     ...GROUPS.map(group =>
       safeFetch(`${BASE}/api/v1/data/bulk`, {
         method: 'POST',
@@ -111,10 +112,10 @@ export async function POST(req: NextRequest) {
     aggregateMetrics: {
       netSavingsChange:   parseFloat(netSavingsChange.toFixed(3)),
       netHappinessChange: parseFloat(netHappinessChange.toFixed(3)),
-      deaths:    deadRes?.data?.dead     ?? 0,
+      deaths:    deadRes?.data?.dead       ?? 0,
       emigrants: migratedRes?.data?.migrated ?? 0,
-      winner:    winnerRes?.data?.winner ?? '',
-      loser:     loserRes?.data?.winner  ?? '',
+      winner:    winnerRes?.data?.winner   ?? '',
+      loser:     loserRes?.data?.winner    ?? '',
     },
     agentTimeSeries: savingsSeries.map((value, i) => ({
       step:      i + 1,
@@ -123,13 +124,11 @@ export async function POST(req: NextRequest) {
     })),
     populationData,
     agentsData,
-    assumptions: [],
+    assumptions: assumptionsRes?.data?.assumptions ?? [],
     timestamp: new Date().toISOString(),
   };
 
-  console.log('[simulate] data keys:', Object.keys(data));
-  console.log('[simulate] populationData keys:', Object.keys(populationData));
-  console.log('[simulate] agentsData keys:', Object.keys(agentsData));
+  console.log('[simulate] done — agents:', agentIds.length, '| assumptions:', data.assumptions.length);
 
   return NextResponse.json(data);
 }

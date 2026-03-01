@@ -25,13 +25,13 @@ const popLabels: Record<PopGroup, string> = {
 };
 
 const chartStyle = {
-  gridColor: 'rgba(160,96,48,0.08)',
+  gridColor: 'rgba(56, 127, 182, 0.88)',
   accent: '#a06030',
   muted: '#70685e',
 };
 
 const tooltipStyle = {
-  background: '#2c2018',
+  background: '#7ab8e6',
   border: '1px solid rgba(160,96,48,0.3)',
   color: '#ece8e0',
   fontFamily: 'Courier Prime',
