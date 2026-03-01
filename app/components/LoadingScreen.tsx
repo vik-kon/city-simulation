@@ -29,12 +29,12 @@ class Node {
   draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath()
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-    ctx.fillStyle = `rgba(210,140,70,${this.opacity})`
+    ctx.fillStyle = `rgba(122,184,230,${this.opacity})`
     ctx.fill()
     if (this.size > 1.6) {
       ctx.beginPath()
       ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(192,120,64,${this.opacity * 0.08})`
+      ctx.fillStyle = `rgba(122,184,230,${this.opacity * 0.08})`
       ctx.fill()
     }
   }
@@ -78,8 +78,8 @@ export default function LoadingScreen({ active }: { active: boolean }) {
             ctx.beginPath()
             ctx.moveTo(nodes[i].x, nodes[i].y)
             ctx.lineTo(nodes[j].x, nodes[j].y)
-            ctx.strokeStyle = `rgba(160,100,48,${op})`
-            ctx.lineWidth = 0.6
+            ctx.strokeStyle = `rgba(7,32,64,${op})`
+            ctx.lineWidth = 5
             ctx.stroke()
           }
         }
@@ -119,7 +119,7 @@ export default function LoadingScreen({ active }: { active: boolean }) {
       className={`fixed inset-0 z-50 overflow-hidden
       transition-opacity duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
       ${active ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
-      style={{ background: "#120e08" }}
+      style={{ background: "#072040" }}
     >
       {/* ... (Keep your JSX exactly as it was) ... */}
       <div className="fixed inset-0 z-[3] pointer-events-none" style={{
@@ -129,23 +129,23 @@ export default function LoadingScreen({ active }: { active: boolean }) {
       <div className="fixed inset-0 z-[2] pointer-events-none" style={{
         background: "radial-gradient(ellipse at center, transparent 40%, rgba(10,8,4,0.6) 100%)"
       }} />
-      <div className="fixed top-0 left-0 right-0 z-40" style={{ height: "1px", background: "#1e1810" }}>
+      <div className="fixed top-0 left-0 right-0 z-40" style={{ height: "1px", background: "#072040" }}>
         <div
           className="h-full transition-all duration-400 ease-out"
           style={{
             width: `${pct}%`,
-            background: "linear-gradient(90deg, #5a3818, #c07840)"
+            background: "linear-gradient(90deg, #072040, #7AB8E6)"
           }}
         />
       </div>
       <canvas ref={canvasRef} className="fixed inset-0 z-[1]" />
       <nav className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-10 py-5">
         <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#f2e8d8" }}>
-          Urban<span style={{ color: "#c07840" }}>Mind</span>
+          <span style={{ color: "#7AB8E6" }}>Blue</span> <span style={{ color: "#FFFFFF" }}>Print</span>
         </div>
-        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.08em", color: "#42382a", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.08em", color: "#072040", display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <span style={{
-            width: 5, height: 5, borderRadius: "50%", background: "#c07840",
+            width: 5, height: 5, borderRadius: "50%", background: "#7AB8E6",
             display: "inline-block",
             animation: "blink 1s step-end infinite"
           }} />
@@ -157,7 +157,7 @@ export default function LoadingScreen({ active }: { active: boolean }) {
         fontSize: "0.58rem",
         letterSpacing: "0.14em",
         textTransform: "uppercase",
-        color: "#3a3020"
+        color: "#072040"
       }}>
         {done ? "Complete" : pct > 0 ? `${pct}%` : ""}
       </div>
