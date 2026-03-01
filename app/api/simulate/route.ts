@@ -124,7 +124,7 @@ export async function POST(req: NextRequest) {
     })),
     populationData,
     agentsData,
-    assumptions: assumptionsRes?.data?.assumptions ?? [],
+    assumptions: (assumptionsRes?.data?.assumptions ?? []).slice(0, 8),
     timestamp: new Date().toISOString(),
   };
 

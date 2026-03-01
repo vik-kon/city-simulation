@@ -63,7 +63,7 @@
             Policy Impact at a Glance
           </h1>
           <div className="text-[11px] tracking-[0.15em] text-muted uppercase mb-10">
-            Aggregate effects across metropolitan area · 12-month projection
+            Aggregate effects across metropolitan area · 4-week projection
           </div>
         </motion.div>
 
